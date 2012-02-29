@@ -1,10 +1,43 @@
 README
 ======
 
-What is Silex Translation Twig Extension?
+What is Silex Twig Translation Extension?
 ----------------
 
-The Silex Translation Twig Extension as the name implies is an extension for
+The Silex Twig Translation Extension as the name implies is an extension for
 the Twig templating engine allowing to use Symfony/Translation within the
 Twig templates of an Silex powered application.
 
+Requirements
+----------------
+
+You will need a working Silex + Symfony/Translation + Twig application.
+
+Setup Symfony/Translation provider:
+	$app->register(new Silex\Provider\TranslationServiceProvider(), array(
+		'locale_fallback'        => 'en',
+		'translation.class_path' => 'vendor/symfony/src',
+	));
+	$app['translator.messages'] = array(
+		'en' => 'locales/en.yml',
+		'de' => 'locales/de.yml'
+	);
+	$app['translator.loader'] = new Symfony\Component\Translation\Loader\YamlFileLoader();
+
+Setup Twig:
+	$app->register(new Silex\Provider\TwigServiceProvider(), array(
+		'twig.path'       => __DIR__.'/views',
+		'twig.class_path' => __DIR__.'/vendor/twig/lib'
+		)
+	));
+
+Register silex-twig-extension:
+	$app['twig']->addExtension(new bitExpert_Silex_Twig_Translation_Extension());
+
+How to use?
+----------------
+
+Example: {% translate my_translation_key %}
+
+Will pass my_translation_key to Symfony/Translation and render the result within
+the twig template.

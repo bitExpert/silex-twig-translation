@@ -1,0 +1,23 @@
+{
+	"name": "bitExpert/silex-twig-translation",
+	"description": "Allows to use Symfony/Translation within a Silex / Twig application.",
+	"keywords": ["silex","twig","translation", "i18n"],
+	"homepage": "https://github.com/bitExpert/silex-twig-translation",
+	"type": "library",
+	"license": "Apache 2.0",
+	"authors": [
+		{
+			"name": "Stephan Hochdörfer",
+			"email": "S.Hochdoerfer@bitExpert.de"
+		}
+	],
+	"require": {
+		"twig/twig": "1.*",
+		"symfony/translation": "2.*",
+		"symfony/config": "2.*",
+		"symfony/yaml": "2.*",
+	},
+	"autoload": {
+		"psr-0": { "bitExpert_Silex_Twig_Translation_": "lib/" }
+	}
+}
