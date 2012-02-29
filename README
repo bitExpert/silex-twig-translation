@@ -1,0 +1,10 @@
+README
+======
+
+What is Silex Translation Twig Extension?
+----------------
+
+The Silex Translation Twig Extension as the name implies is an extension for
+the Twig templating engine allowing to use Symfony/Translation within the
+Twig templates of an Silex powered application.
+
