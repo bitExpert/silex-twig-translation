@@ -16,6 +16,7 @@
 		"symfony/translation": "2.*",
 		"symfony/config": "2.*",
 		"symfony/yaml": "2.*",
+		"silex/silex": "1.0.*"
 	},
 	"autoload": {
 		"psr-0": { "bitExpert_Silex_Twig_Translation_": "lib/" }
